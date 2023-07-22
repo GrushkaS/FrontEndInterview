@@ -1,5 +1,5 @@
 import { Box, ImageList } from "@mui/material";
-import { IImage } from "../../Interfaces/termOfUse";
+import { IImage } from "../../interfaces/termOfUse";
 import ImageItem from "../ImageItem/Imageitem";
 
 type Props = {

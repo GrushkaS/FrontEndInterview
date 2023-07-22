@@ -2,6 +2,7 @@ export interface IParagraph {
   index: number;
   title: string;
   content: string;
+  text: string;
 };
 
 export interface IImage {

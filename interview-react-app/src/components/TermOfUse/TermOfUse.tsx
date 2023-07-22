@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Typography from "@mui/material/Typography";
 import { useState } from "react";
-import { ITermOfUse } from "../../Interfaces/termOfUse";
+import { ITermOfUse } from "../../interfaces/termOfUse";
 
 const mainContainerStyle = {
   position: 'absolute' as 'absolute',
@@ -66,7 +66,7 @@ const TermOfUse = ({termsOfUse, onAction}: Props) => {
                 <Typography
                   variant="caption"
                   color="white">
-                  {paragraphs.content}
+                  {paragraphs.content || paragraphs.text}
                 </Typography>
               </Box>
             ))}

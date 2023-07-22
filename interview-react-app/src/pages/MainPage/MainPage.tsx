@@ -1,9 +1,9 @@
 import Box from "@mui/material/Box";
 import { useEffect, useState } from "react";
-import { getUrl, imagesAndTermOfUseService } from "../../backEnd/imageAndTermOfUseService/imageAndTermOfUseService";
 import TermOfUse, { ETermOfUseAction } from "../../components/TermOfUse/TermOfUse";
-import { IImage, ITermOfUse} from "../../Interfaces/termOfUse";
+import { IImage, ITermOfUse} from "../../interfaces/termOfUse";
 import Images from "../../components/Images/Images";
+import { getUrl, imagesAndTermOfUseService } from "../../services/imageAndTermOfUseService/imageAndTermOfUseService";
 
 const initTermOfUse: ITermOfUse = {
   paragraphs: [],
