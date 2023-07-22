@@ -1,6 +1,6 @@
 import Box from "@mui/material/Box";
 import { useEffect, useState } from "react";
-import { imagesAndTermOfUseService } from "../../backEnd/imageAndTermOfUseService/imageAndTermOfUseService";
+import { getUrl, imagesAndTermOfUseService } from "../../backEnd/imageAndTermOfUseService/imageAndTermOfUseService";
 import TermOfUse, { ETermOfUseAction } from "../../components/TermOfUse/TermOfUse";
 import { IImage, ITermOfUse} from "../../Interfaces/termOfUse";
 import Images from "../../components/Images/Images";
@@ -32,7 +32,12 @@ const onAction = (action: ETermOfUseAction) => {
 
 const fetchInfo = () => { 
   return imagesAndTermOfUseService.getImagesAndTermOfuse().then((data) => {
-    setImages(data.images);
+    setImages(data.images.map(image => {
+      return {
+        ...image,
+        fullUrl: getUrl(image.image_url)
+      }
+    }));
     setTermsOfUse(data.terms_of_use);
   }); 
   }

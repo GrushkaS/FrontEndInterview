@@ -58,14 +58,13 @@ const TermOfUse = ({termsOfUse, onAction}: Props) => {
           </Typography>
 
           <Box sx={contentContainerStyle}>
-            {termsOfUse.paragraphs.map((paragraphs) => (
-              <Box>
-                <Typography key={paragraphs.index} variant="h6" color="white">
+            {termsOfUse.paragraphs.map((paragraphs, index) => (
+              <Box key={index}>
+                <Typography variant="h6" color="white">
                   {paragraphs.title}
                 </Typography>
                 <Typography
                   variant="caption"
-                  key={paragraphs.index}
                   color="white">
                   {paragraphs.content}
                 </Typography>

@@ -5,7 +5,8 @@ export interface IParagraph {
 };
 
 export interface IImage {
-    image_url: string
+    image_url: string;
+    fullUrl: string;
 }
 
 export interface ITermOfUse {
