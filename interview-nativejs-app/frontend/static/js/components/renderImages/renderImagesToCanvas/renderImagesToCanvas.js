@@ -30,15 +30,6 @@ export const renderImageToCanvas = async (imageUrl) => {
       containerDownloadButton.style.backgroundColor = "#014175";
     }
 
-    containerDownloadButton.addEventListener('click', () => {
-      const link = document.createElement("a");
-      link.href = imageUrl.imageFullUrl;
-      link.download = imageUrl.image_url;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    });
-
     const ctx = imageCanvas.getContext('2d');
   
     const image = new Image();
@@ -61,6 +52,13 @@ export const renderImageToCanvas = async (imageUrl) => {
     container.onmouseleave = function(){
       container.removeChild(containerDownloadButton);
     }
+
+    containerDownloadButton.addEventListener('click', () => {
+      const link = document.createElement("a");
+      link.href = imageUrl.imageFullUrl;
+      link.download = imageUrl.image_url;
+      link.click();
+    });
 
     return container;
   }
