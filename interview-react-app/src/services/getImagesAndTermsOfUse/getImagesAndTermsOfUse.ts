@@ -1,4 +1,4 @@
-import { IImagesAndTermsOfUse } from "../../interfaces/termOfUse";
+import { IImagesAndTermsOfUse } from "../../Interfaces/termOfUse";
 
 const baseUrl = "http://167.71.69.158";
 

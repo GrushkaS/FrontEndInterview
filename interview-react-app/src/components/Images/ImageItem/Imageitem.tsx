@@ -2,9 +2,9 @@ import IconButton from "@mui/material/IconButton";
 import ImageListItem from "@mui/material/ImageListItem";
 import ImageListItemBar from "@mui/material/ImageListItemBar";
 import DownloadIcon from '@mui/icons-material/Download';
-import { IImage } from "../../../interfaces/termOfUse";
 import { useState } from "react";
 import Box from "@mui/material/Box";
+import { IImage } from "../../../Interfaces/termOfUse";
 
 type Props = {
     image: IImage;

@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Typography from "@mui/material/Typography";
 import { useState } from "react";
-import { ITermOfUse } from "../../interfaces/termOfUse";
+import { ITermOfUse } from "../../Interfaces/termOfUse";
 
 const mainContainerStyle = {
   position: 'absolute' as 'absolute',
