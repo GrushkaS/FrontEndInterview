@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import TermOfUse from './components/TermOfUse/TermOfUse';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import MainPage from './pages/MainPage/MainPage';
 

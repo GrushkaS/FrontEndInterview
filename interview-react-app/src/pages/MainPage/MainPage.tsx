@@ -3,16 +3,16 @@ import { useEffect, useState } from "react";
 import TermOfUse, { ETermOfUseAction } from "../../components/TermOfUse/TermOfUse";
 import { IImage, ITermOfUse} from "../../interfaces/termOfUse";
 import Images from "../../components/Images/Images";
-import { getUrl, imagesAndTermOfUseService } from "../../services/imageAndTermOfUseService/imageAndTermOfUseService";
+import { getUrl, imagesAndTermOfUseService } from "../../services/getImagesAndTermsOfUse/getImagesAndTermsOfUse";
 
-const initTermOfUse: ITermOfUse = {
+const initialTermsOfUse: ITermOfUse = {
   paragraphs: [],
 };
 
 const MainPage = () => {
 
 const [images, setImages] = useState<Array<IImage>>([]);
-const [termsOfUse, setTermsOfUse] = useState<ITermOfUse>(initTermOfUse);
+const [termsOfUse, setTermsOfUse] = useState<ITermOfUse>(initialTermsOfUse);
 
 const [showImageList, setShowImageList] = useState<boolean>(false);
 
@@ -30,7 +30,7 @@ const onAction = (action: ETermOfUseAction) => {
 }
 
 
-const fetchInfo = () => { 
+const fetchImagesAndTermsOfUse = () => { 
   return imagesAndTermOfUseService.getImagesAndTermOfuse().then((data) => {
     setImages(data.images.map(image => {
       return {
@@ -43,7 +43,7 @@ const fetchInfo = () => {
   }
   
   useEffect(() => {
-    fetchInfo();
+    fetchImagesAndTermsOfUse();
   }, [])
 
   return (

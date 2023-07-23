@@ -14,7 +14,7 @@ export interface ITermOfUse {
   paragraphs: Array<IParagraph>;
 }
   
-export  interface IImagesAndTermOfUse {
+export  interface IImagesAndTermsOfUse {
     images: Array<IImage>;
     terms_of_use: ITermOfUse;
 };

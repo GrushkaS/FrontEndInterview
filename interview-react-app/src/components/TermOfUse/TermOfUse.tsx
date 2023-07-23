@@ -18,10 +18,16 @@ const mainContainerStyle = {
   p: 4,
 };
 
-const contentContainerStyle = {
+const termsOfUseContainerStyle = {
   padding: '1rem 1rem 1rem 0',
   overflow: 'auto',
   maxHeight: "80vh",
+};
+
+const buttonContainerStyle = {
+  display: "flex",
+  justifyContent: "flex-end",
+  marginTop: 2,
 };
 
 export enum ETermOfUseAction {
@@ -57,7 +63,7 @@ const TermOfUse = ({termsOfUse, onAction}: Props) => {
             Terms Of Use
           </Typography>
 
-          <Box sx={contentContainerStyle}>
+          <Box sx={termsOfUseContainerStyle}>
             {termsOfUse.paragraphs.map((paragraphs, index) => (
               <Box key={index}>
                 <Typography variant="h6" color="white">
@@ -72,7 +78,7 @@ const TermOfUse = ({termsOfUse, onAction}: Props) => {
             ))}
           </Box>
 
-          <Box sx={{ display: 'flex', justifyContent: 'flex-end', marginTop: 2 }}>
+          <Box sx={buttonContainerStyle}>
             <Button onClick={() => closeModal(ETermOfUseAction.ACCEPT)} variant="contained" color="primary">
               Accept
             </Button>

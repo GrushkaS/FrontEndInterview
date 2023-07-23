@@ -2,7 +2,7 @@ import IconButton from "@mui/material/IconButton";
 import ImageListItem from "@mui/material/ImageListItem";
 import ImageListItemBar from "@mui/material/ImageListItemBar";
 import DownloadIcon from '@mui/icons-material/Download';
-import { IImage } from "../../interfaces/termOfUse";
+import { IImage } from "../../../interfaces/termOfUse";
 import { useState } from "react";
 import Box from "@mui/material/Box";
 
@@ -14,36 +14,12 @@ const ImageItem = ({image}: Props) => {
     const [isHover, setIsHover] = useState(false);
 
     const downloadImage = (downloadUrl: string, fileName: string): void => {
+
       const link = document.createElement("a");
       link.href = downloadUrl;
-      link.download = fileName;
-      document.body.appendChild(link);
+      link.download = fileName;     
       link.click();
-      document.body.removeChild(link);
 
-      /*fetch(downloadUrl, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          // Add any necessary headers for authentication or other requirements
-        },
-      })
-        .then((response) => response.blob())
-        .then((blob) => {
-          // Create a temporary download link element
-          const url = window.URL.createObjectURL(new Blob([blob]));
-          const link = document.createElement("a");
-          link.href = url;
-          link.setAttribute("download", "image.jpg");
-
-          // Simulate a click on the link to trigger the download
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-        })
-        .catch((error) => {
-          console.error("Error:", error);
-        });*/
     }
 
  return (
